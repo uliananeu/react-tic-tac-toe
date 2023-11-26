@@ -1,6 +1,11 @@
 import React from "react";
 
-export default function Squire(props) {
+interface SquareProps {
+  value: string | null;
+  onClick: () => void;
+}
+
+const Square: React.FC<SquareProps> = (props) => {
   return (
     <button
       className={props.value ? "btn disabled" : "btn"}
@@ -9,4 +14,6 @@ export default function Squire(props) {
       {props.value}
     </button>
   );
-}
+};
+
+export default Square;
